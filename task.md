@@ -1,24 +1,24 @@
 Task List for the project:
 
-- [ ] Task 1: Set Up the Laravel Project
+- [x] Task 1: Set Up the Laravel Project
 Create a new Laravel project using the Laravel Installer.
 Set up your development environment.
 
-- [ ] Task 2: Create the Database Schema
+- [x] Task 2: Create the Database Schema
 Create a database table to store form submission data (e.g., company_submissions).
 Define the table columns based on the form fields.
 
 
-- [ ] Task 3: Create the CompanyController
+- [x] Task 3: Create the CompanyController
 Create a controller named CompanyController to handle the form submission and other actions.
 Define the necessary routes for the controller.
 
-- [ ] Task 4: Create the Form View
+- [x] Task 4: Create the Form View
 Create a Blade view to display the form.
 Add the Company Symbol, Start Date, End Date, and Email fields to the form.
 Include client-side validation using jQuery UI datepicker for date fields.
 
-- [ ] Task 5: Fetch Company Symbols
+- [x] Task 5: Fetch Company Symbols
 Fetch the available company symbols from the provided JSON file (https://pkgstore.datahub.io/core/nasdaq-listings/nasdaq-listed_json/data/a5bc7580d6176d60ac0b2142ca8d7df6/nasdaq-listed_json.json).
 Pass the symbols to the form view and populate the Company Symbol field as a dropdown.
 
@@ -54,7 +54,6 @@ Ensure you have good test coverage (aim for 100%).
 Containerize your Laravel application using Docker.
 Consider using Dependency Injection where applicable.
 Continue to improve test coverage to reach 100%.
-Any additional improvements or features you want to add.
 
 - [ ] Task 13: GitHub Repository
 Create a GitHub repository for your project.
