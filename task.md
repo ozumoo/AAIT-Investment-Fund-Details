@@ -5,7 +5,7 @@ Create a new Laravel project using the Laravel Installer.
 Set up your development environment.
 
 - [x] Task 2: Create the Database Schema
-Create a database table to store form submission data (e.g., company_submissions).
+Create a database table to sre form submission data (e.g., company_submissions).
 Define the table columns based on the form fields.
 
 
@@ -33,11 +33,11 @@ Implement code in the CompanyController to retrieve historical data using the pr
 Use the Company Symbol and date range from the form submission.
 Set up the necessary header parameters (X-RapidAPI-Key and X-RapidAPI-Host).
 
-- [ ] Task 8: Display Historical Data in Table
+- [x] Task 8: Display Historical Data in Table
 Create a view in Laravel to display historical data in tabular format (table columns: Date, Open, High, Low, Close, Volume).
 Pass the retrieved historical data to the view.
-
-- [ ] Task 9: Create a Chart
+    - [ ] Refactor to a service
+- [x] Task 9: Create a Chart
 Integrate a chart library like Chart.js (https://www.chartjs.org/) into your Laravel application.
 Generate a chart based on the Open and Close prices from the retrieved historical data.
 Display the chart in the view.

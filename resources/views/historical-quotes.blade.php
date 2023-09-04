@@ -21,7 +21,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($historicalDataPaginated as $data)
+                            @foreach ($filteredDataPaginated as $data)
                             <tr>
                                 <td>{{ date('Y-m-d', $data['date']) }}</td>
                                 <td>{{ $data['open'] }}</td>
@@ -36,10 +36,13 @@
 
                     <!-- Display pagination links -->
                     <div class="d-flex justify-content-center">
-                        {{ $historicalDataPaginated->links() }}
+                        {{ $filteredDataPaginated->links() }}
                     </div>
                     <!-- Chart.js chart for Open and Close prices -->
-                    {{-- <canvas id="priceChart" width="400" height="200"></canvas> --}}
+                    <div style="width: 600px; margin: auto;">
+                        <canvas id="priceChart"></canvas>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -47,55 +50,64 @@
 </div>
 
 <!-- Include Chart.js library and create the chart -->
-{{-- <script src="{{ asset('resources/js/chart.js') }}"></script> --}}
-{{-- <script>
-    var ctx = document.getElementById('priceChart').getContext('2d');
-    var dates = {!! json_encode($dates) !!}; // An array of date values
-    var openPrices = {!! json_encode($openPrices) !!}; // An array of open prices
-    var closePrices = {!! json_encode($closePrices) !!}; // An array of close prices
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.min.js"></script>
 
+<script>
+var ctx = document.getElementById('priceChart').getContext('2d');
+var dates = {!! json_encode($dates) !!}; // An array of date values
+
+// Format dates using Moment.js
+var formattedDates = dates.map(date => moment(date).format('dd.mm.yyyy'));
+
+var openPrices = {!! json_encode($openPrices) !!}; // An array of open prices
+var closePrices = {!! json_encode($closePrices) !!}; // An array of close prices
+
+document.addEventListener('DOMContentLoaded', function() {
     var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: dates,
-            datasets: [{
-                label: 'Open Price',
-                data: openPrices,
-                borderColor: 'rgba(75, 192, 192, 1)',
-                borderWidth: 1,
-                fill: false,
-            }, {
-                label: 'Close Price',
-                data: closePrices,
-                borderColor: 'rgba(255, 99, 132, 1)',
-                borderWidth: 1,
-                fill: false,
-            }]
-        },
-        options: {
-            scales: {
-                x: {
-                    type: 'time',
-                    time: {
-                        unit: 'day',
-                        displayFormats: {
-                            day: 'MMM D'
-                        }
-                    },
-                    title: {
-                        display: true,
-                        text: 'Date'
+    type: 'line',
+    data: {
+        labels: dates, // Use the formatted dates
+        datasets: [{
+            label: 'Open Price',
+            data: openPrices,
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1,
+            fill: false,
+        }, {
+            label: 'Close Price',
+            data: closePrices,
+            borderColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 1,
+            fill: false,
+        }]
+    },
+    options: {
+        scales: {
+            x: {
+                type: 'time',
+                time: {
+                    unit: 'day',
+                    displayFormats: {
+                        day: 'dd MMM yyyy'
                     }
                 },
-                y: {
-                    beginAtZero: false,
-                    title: {
-                        display: true,
-                        text: 'Price'
-                    }
+                title: {
+                    display: true,
+                    text: 'Date'
+                }
+            },
+            y: {
+                beginAtZero: false,
+                title: {
+                    display: true,
+                    text: 'Price'
                 }
             }
         }
-    });
-</script> --}}
+    }
+});
+
+});
+
+</script>
 @endsection

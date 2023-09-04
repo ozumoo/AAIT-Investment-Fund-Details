@@ -13,15 +13,14 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
     <!-- Include CSS stylesheets or external assets here -->
+    @vite('resources/js/app.js')
+
 </head>
 <body>
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
         <ul class="nav nav-pills">
-          <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="/historical-quotes" class="nav-link active" aria-current="page">Historical Quotes</a></li>
+          <li class="nav-item"><a href="/company" class="nav-link">Company Form Submission</a></li>
         </ul>
     </header>
     

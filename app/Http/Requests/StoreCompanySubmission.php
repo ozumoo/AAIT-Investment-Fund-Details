@@ -25,7 +25,7 @@ class StoreCompanySubmission extends FormRequest
             'company_symbol' => 'required|exists:company_listings,Symbol',
             'start_date' => 'required|date_format:Y-m-d|before_or_equal:end_date|before_or_equal:today',
             'end_date' => 'required|date_format:Y-m-d|after_or_equal:start_date|after_or_equal:today',
-            'email' => 'required|email:rfc,dns',
+            'email' => 'required|email:rfc,dns|unique:company_submissions',
         ];
     }
 }
