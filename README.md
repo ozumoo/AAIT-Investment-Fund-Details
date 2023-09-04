@@ -1,70 +1,160 @@
-php artisan db:seed --class=CompanyListingsSeeder
+Hello!
 
 
+### Description
+This project provides insights for stocks prices in different matter of time based on company_symbol
 
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+### Prerequisites
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Before setting up and running the Laravel project, ensure you have the following prerequisites installed on your system:
 
-## About Laravel
+1. PHP (Recommended version: PHP 8.0 or higher)
+2. Composer (Dependency manager for PHP)
+3. Node.js (Required for Laravel Mix)
+4. MySQL (or any other supported database)
+5. A web server (e.g., Apache, Nginx)
+6. Git (Version control)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Installation
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+#### Without Docker
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+1. Clone the Git repository:
 
-## Learning Laravel
+   ```bash
+   git clone <repository_url>
+   ```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+2. Change directory to your project folder:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+   ```bash
+   cd project-folder
+   ```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+3. Install PHP dependencies using Composer:
 
-## Laravel Sponsors
+   ```bash
+   composer install
+   ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+4. Create a `.env` file by duplicating the `.env.example` file:
 
-### Premium Partners
+   ```bash
+   cp .env.example .env
+   ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+5. Generate an application key:
 
-## Contributing
+   ```bash
+   php artisan key:generate
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+6. Configure your database connection by updating the `.env` file with your database credentials.
 
-## Code of Conduct
+7. Run database migrations to create the required tables:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+   ```bash
+   php artisan migrate
+   ```
 
-## Security Vulnerabilities
+8. Optionally, seed the database with initial data (if available):
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+   ```bash
+   php artisan db:seed
+   ```
 
-## License
+9. Install JavaScript dependencies (if needed):
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+   ```bash
+   npm install
+   ```
+
+10. Compile assets (JavaScript and CSS) if you use Laravel Mix:
+
+    ```bash
+    npm run dev
+    ```
+
+11. Start the Laravel development server:
+
+    ```bash
+    php artisan serve
+    ```
+
+12. Access the application in your web browser at `http://localhost:8000`.
+
+#### With Docker
+
+1. Clone the Git repository:
+
+   ```bash
+   git clone <repository_url>
+   ```
+
+2. Change directory to your project folder:
+
+   ```bash
+   cd project-folder
+   ```
+
+3. Create a `.env` file by duplicating the `.env.example` file:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+4. Build and start Docker containers:
+
+   ```bash
+   docker-compose up --build
+   ```
+
+5. Install PHP dependencies inside the PHP container:
+
+   ```bash
+   docker-compose exec php composer install
+   ```
+
+6. Generate an application key:
+
+   ```bash
+   docker-compose exec php php artisan key:generate
+   ```
+
+7. Configure your database connection by updating the `.env` file inside the PHP container with your database credentials.
+
+8. Run database migrations to create the required tables:
+
+   ```bash
+   docker-compose exec php php artisan migrate
+   ```
+
+9. Optionally, seed the database with initial data (if available):
+
+   ```bash
+   docker-compose exec php php artisan db:seed
+   ```
+
+10. Install JavaScript dependencies (if needed) inside the Node.js container:
+
+    ```bash
+    docker-compose exec node npm install
+    ```
+
+11. Compile assets (JavaScript and CSS) if you use Laravel Mix inside the Node.js container:
+
+    ```bash
+    docker-compose exec node npm run dev
+    ```
+
+12. Access the application in your web browser at `http://localhost:8000`.
+
+### Running Seeder
+
+To seed your database with data, use the following Artisan command:
+
+```bash
+php artisan db:seed
+```
+
+This command will execute the seeders defined in your Laravel application, populating your database with initial data.

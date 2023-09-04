@@ -43,6 +43,11 @@ class CompanyController extends Controller
         return redirect('/historical-quotes')->with('success', 'Form submitted successfully.');
     }
 
+    /**
+     * Show historical quotes for a company.
+     *
+     * @return View
+    */
     public function showHistoricalQuotes()
     {
         $uniqueEmail = Session::get('email');

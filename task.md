@@ -42,20 +42,20 @@ Integrate a chart library like Chart.js (https://www.chartjs.org/) into your Lar
 Generate a chart based on the Open and Close prices from the retrieved historical data.
 Display the chart in the view.
 
-- [ ] Task 10: Email Submission Data
+- [x] Task 10: Email Submission Data
 Implement code in the CompanyController to send an email to the submitted email address.
 Use the company's name as the email subject (retrieved from the Company Symbol).
 Include the Start Date and End Date in the email body.
 
-- [ ] Task 11: Testing
+- [x] Task 11: Testing
 Write unit tests for your application, covering both backend and frontend.
 Ensure you have good test coverage (aim for 100%).
 
-- [ ] Task 12: Bonus (Optional)
+- [x] Task 12: Bonus (Optional)
 Containerize your Laravel application using Docker.
 Consider using Dependency Injection where applicable.
 Continue to improve test coverage to reach 100%.
 
-- [ ] Task 13: GitHub Repository
+- [x] Task 13: GitHub Repository
 Create a GitHub repository for your project.
 Share the repository with the provided GitHub account (phpinterviews@trading-point.com).
