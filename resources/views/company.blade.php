@@ -35,15 +35,15 @@
         </div>
         <div class="form-group">
             <label for="start_date">Start Date:</label>
-            <input type="text" class="form-control datepicker" id="start_date" name="start_date" placeholder="YYYY-mm-dd" required>
+            <input type="text" class="form-control datepicker" id="start_date" name="start_date" placeholder="YYYY-mm-dd" value="{{old('start_date')}}" required>
         </div>
         <div class="form-group">
             <label for="end_date">End Date:</label>
-            <input type="text" class="form-control datepicker" id="end_date" name="end_date" placeholder="YYYY-mm-dd" required>
+            <input type="text" class="form-control datepicker" id="end_date" name="end_date" placeholder="YYYY-mm-dd"  value="{{old('end_date')}}" required>
         </div>
         <div class="form-group">
             <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email" name="email" required>
+            <input type="email" class="form-control" id="email" name="email" value="{{old('email')}}" required>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
