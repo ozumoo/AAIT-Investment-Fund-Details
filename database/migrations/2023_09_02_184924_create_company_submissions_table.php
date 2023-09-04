@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('company_symbol');
             $table->date('start_date');
             $table->date('end_date');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->timestamps();
         });
     }

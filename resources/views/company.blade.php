@@ -21,25 +21,35 @@
             </div>
         @endif
 
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         <form method="POST" action="/company">
             @csrf
             <div class="form-group">
                 <label for="company_symbol">Company Symbol:</label>
                 <select class="form-control" id="company_symbol" name="company_symbol" required>
-
-                    @foreach ($symbols as $symbolData)
-                        <option value="{{ $symbolData['Symbol'] }}">{{ $symbolData['Symbol'] }}</option>
+                    
+                    @foreach ($symbols as $symbol)
+                        <option value="{{ $symbol }}">{{ $symbol }}</option>
                     @endforeach
                     
                 </select>
             </div>
             <div class="form-group">
                 <label for="start_date">Start Date:</label>
-                <input type="text" class="form-control datepicker" id="start_date" name="start_date" required>
+                <input type="text" class="form-control datepicker" id="start_date" name="start_date" placeholder="YYYY-mm-dd" required>
             </div>
             <div class="form-group">
                 <label for="end_date">End Date:</label>
-                <input type="text" class="form-control datepicker" id="end_date" name="end_date" required>
+                <input type="text" class="form-control datepicker" id="end_date" name="end_date" placeholder="YYYY-mm-dd" required>
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>

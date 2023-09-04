@@ -20,3 +20,4 @@ Route::get('/', function () {
 
 Route::get('/company',  [CompanyController::class, 'index']);
 Route::post('/company', [CompanyController::class, 'store']);
+Route::get('/historical-quotes', [CompanyController::class, 'showHistoricalQuotes'])->name('historical-quotes');

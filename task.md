@@ -21,13 +21,14 @@ Include client-side validation using jQuery UI datepicker for date fields.
 - [x] Task 5: Fetch Company Symbols
 Fetch the available company symbols from the provided JSON file (https://pkgstore.datahub.io/core/nasdaq-listings/nasdaq-listed_json/data/a5bc7580d6176d60ac0b2142ca8d7df6/nasdaq-listed_json.json).
 Pass the symbols to the form view and populate the Company Symbol field as a dropdown.
+    - [x] Refactor to seeder | apply caching.
 
-- [ ] Task 6: Server-Side Validation
+- [x] Task 6: Server-Side Validation
 Implement server-side validation in the CompanyController for the form data.
 Validate Company Symbol, Start Date, End Date, and Email based on the specified rules.
 Display appropriate validation error messages.
 
-- [ ] Task 7: Historical Data Retrieval
+- [x] Task 7: Historical Data Retrieval
 Implement code in the CompanyController to retrieve historical data using the provided API (https://yh-finance.p.rapidapi.com/stock/v3/get-historical-data).
 Use the Company Symbol and date range from the form submission.
 Set up the necessary header parameters (X-RapidAPI-Key and X-RapidAPI-Host).
