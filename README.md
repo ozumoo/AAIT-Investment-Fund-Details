@@ -1,10 +1,13 @@
-Hello!
+Hello! This is a documentation for the task. You can find out how I split the task in `task.md` file.
 
 
 ### Description
+---
+
 This project provides insights for stocks prices in different matter of time based on company_symbol
 
 ### Prerequisites
+---
 
 Before setting up and running the Laravel project, ensure you have the following prerequisites installed on your system:
 
@@ -22,13 +25,13 @@ Before setting up and running the Laravel project, ensure you have the following
 1. Clone the Git repository:
 
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/ozumoo/AAIT-Investment-Fund-Details
    ```
 
 2. Change directory to your project folder:
 
    ```bash
-   cd project-folder
+   cd AAIT-Investment-Fund-Details
    ```
 
 3. Install PHP dependencies using Composer:
@@ -88,13 +91,13 @@ Before setting up and running the Laravel project, ensure you have the following
 1. Clone the Git repository:
 
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/ozumoo/AAIT-Investment-Fund-Details
    ```
 
 2. Change directory to your project folder:
 
    ```bash
-   cd project-folder
+   cd AAIT-Investment-Fund-Details
    ```
 
 3. Create a `.env` file by duplicating the `.env.example` file:
@@ -154,7 +157,15 @@ Before setting up and running the Laravel project, ensure you have the following
 To seed your database with data, use the following Artisan command:
 
 ```bash
-php artisan db:seed
+php artisan db:seed --class=CompanyListingsSeeder  
 ```
+The idea here is to cache the result so we don't depend on APIs. 
+Also useful if the server there has any problems.
 
-This command will execute the seeders defined in your Laravel application, populating your database with initial data.
+### Testing
+
+You can run tests for the project by executing the following command:
+
+```bash
+php artisan test
+```
