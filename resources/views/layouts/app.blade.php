@@ -19,8 +19,12 @@
 <body>
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
         <ul class="nav nav-pills">
-          <li class="nav-item"><a href="/historical-quotes" class="nav-link active" aria-current="page">Historical Quotes</a></li>
-          <li class="nav-item"><a href="/company" class="nav-link">Company Form Submission</a></li>
+            <li class="nav-item">
+                <a href="{{ route('historical-quotes') }}" class="nav-link {{ request()->routeIs('historical-quotes') ? 'active' : '' }}" aria-current="page">Historical Quotes</a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('company-form') }}" class="nav-link {{ request()->routeIs('company-form') ? 'active' : '' }}">Company Form Submission</a>
+            </li>
         </ul>
     </header>
     

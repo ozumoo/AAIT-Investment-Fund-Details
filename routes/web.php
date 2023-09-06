@@ -18,6 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/company',  [CompanyController::class, 'index']);
+Route::get('/company',  [CompanyController::class, 'index'])->name('company-form');
 Route::post('/company', [CompanyController::class, 'store']);
 Route::get('/historical-quotes', [CompanyController::class, 'showHistoricalQuotes'])->name('historical-quotes');
